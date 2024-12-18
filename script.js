@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
     carga[0].style.display = "flex";
     document.body.style.overflow = "hidden";
-
+ 
     if(window.innerHeight <= 637 && window.innerWidth <= 767){
         document.getElementById("filtros-busqueda").style.overflowY = "scroll";
     }else{
