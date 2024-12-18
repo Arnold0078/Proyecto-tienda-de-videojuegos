@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         array_push($_SESSION['archivos'], $juego);
         echo json_encode(['mensaje' => 'Juego añadido exitosamente al carrito']);
 
-    }else{
+    } else {
         echo json_encode(['mensaje' => 'Por favor proporcione el id del juego a añadirlo al carrito']);
     }
 }

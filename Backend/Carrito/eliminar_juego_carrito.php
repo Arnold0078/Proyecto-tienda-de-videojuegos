@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     if ($carrito != null && count($carrito) != 0) {
         echo json_encode(['mensaje' => 'Carrito vacio']);
 
-    }else if (isset($data['id'])) {
+    } else if (isset($data['id'])) {
         $id = $data['id'];
 
         //En caso de encontrar el juego lo elimina y reemplaza el arreglo de juegos del carro y sale de la consulta
         foreach ($carrito as $index => $juego) {
-            if($juego['id'] == $id){
+            if ($juego['id'] == $id) {
                 unset($carrito[$index]);
                 $_SESSION['carrito'] = array_values($carrito);
                 echo json_encode(['mensaje' => 'Juego eliminado del carrito']);
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
         echo json_encode(['mensaje' => 'Juego a eliminar del carrito no encontrado']);
 
-    }else{
+    } else {
         echo json_encode(['mensaje' => 'Por favor proporcione el id del juego a eliminar del carrito']);
     }
 }
