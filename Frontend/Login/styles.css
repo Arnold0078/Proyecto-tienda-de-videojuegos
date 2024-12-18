@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+/* CLASS */
+
+body{
+    font-family: "Oxanium", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    
+}
+
+.quitar-guion{
+    text-decoration: none !important;
+}
+
+.logo{
+    color: rgb(252, 252, 252);
+}
+
+.barra{
+    height: 8cap;
+    background: rgb(0, 3, 44);
+}
+
+.cuerpo{
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url(../Imagenes/fondo-registro-login.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.formulario{
+    background: rgba(0, 3, 44, 0.95);
+}
+
+input {
+    color: rgb(255, 255, 255);
+    background-color: #212121;
+    max-width: 190px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+input:focus {
+    background-color: #212121;
+    outline-color: rgb(255, 255, 255);
+    box-shadow: -3px -3px 15px rgb(255, 255, 255);
+    transition: ease .5s;
+    transition-property: box-shadow;
+}
+
+.button {
+    --main-color: rgb(46, 213, 115);
+    --main-bg-color: rgba(46, 213, 116, 0.36);
+    --pattern-color: rgba(46, 213, 116, 0.073);
+
+    filter: hue-rotate(0deg);
+
+    cursor: pointer;
+    text-transform: uppercase;
+    background: radial-gradient(
+        circle,
+        var(--main-bg-color) 0%,
+        rgba(0, 0, 0, 0) 95%
+        ),
+        linear-gradient(var(--pattern-color) 1px, transparent 1px),
+        linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+    background-size:
+        cover,
+        15px 15px,
+        15px 15px;
+    background-position:
+        center center,
+        center center,
+        center center;
+    border-image: radial-gradient(
+        circle,
+        var(--main-color) 0%,
+        rgba(0, 0, 0, 0) 100%
+        )
+        1;
+    border-width: 1px 0 1px 0;
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: background-size 0.2s ease-in-out;
+}
+
+.button:hover {
+    background-size:
+        cover,
+        10px 10px,
+        10px 10px;
+}
+.button:active {
+    filter: hue-rotate(250deg);
+}
+
+/* ID */
+
+#cabesera{
+    position: fixed;
+    width: 101vw;
+}
+
+@media (min-width: 922px) and (max-width: 1200px) {
+    .barra{
+        width: 55% !important;
+    }
+}
+
+@media (min-width: 576px){
+    .barra{
+        flex-wrap: wrap;
+        
+    }
+}

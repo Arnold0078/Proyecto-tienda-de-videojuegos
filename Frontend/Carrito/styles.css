@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+
+/* CLASS */
+
+body {
+    font-family: "Oxanium", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* CARGA */
+
+/* From Uiverse.io by carlosepcc */
+.loader {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    background: #08323b;
+    z-index: 1000;
+}
+
+.head {
+    width: 10%;
+    height: 10%;
+    background-color: #FA95FB;
+    border-radius: 50%;
+    animation: move 3s linear infinite;
+    box-shadow: 0 1rem 1rem #E220B8;
+    filter: blur(.3rem);
+    z-index: 1;
+}
+
+.eye {
+    display: flex;
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: #EFFFC8;
+    background: radial-gradient(rgba(255, 247, 247, 1) 20%, rgba(255, 170, 197, 1) 100%);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 0 1rem #F752F7;
+    animation: move 5s alternate infinite;
+}
+
+.eye::before {
+    content: "";
+    display: flex;
+    width: 1rem;
+    height: 2rem;
+    background-color: #000;
+    background: radial-gradient(rgba(0, 0, 0, 1) 44%, #E220B8 50%, transparent 60%);
+    border-radius: 50%;
+    animation: blink 4s ease-in-out alternate infinite;
+}
+
+.flames {
+    display: flex;
+    position: absolute;
+    z-index: 0;
+}
+
+.particle {
+    display: flex;
+    position: absolute;
+    background-color: #FA95FB;
+    border-radius: 50%;
+    filter: blur(.3rem);
+    border-top: 5px solid #E220B8;
+    border-left: 5px solid #E220B8;
+}
+
+.flames::before {
+    content: "";
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    background: #f865d8;
+    filter: blur(5rem);
+    opacity: 0.5;
+    border-radius: 50%;
+    top: -8rem;
+    left: -4rem;
+    z-index: 4;
+    animation: pulse 3s linear infinite;
+}
+
+.particle:nth-child(1) {
+    width: 4rem;
+    height: 4rem;
+    top: -6rem;
+    animation: move 7s alternate-reverse infinite;
+}
+
+.particle:nth-child(2) {
+    width: 1.5rem;
+    height: 1.5rem;
+    top: -8rem;
+    left: -5rem;
+    animation: move 1.5s ease-in-out reverse infinite;
+}
+
+.particle:nth-child(3) {
+    width: 4rem;
+    height: 4rem;
+    top: -5rem;
+    left: -4rem;
+    animation: move 8s alternate-reverse infinite;
+}
+
+.particle:nth-child(4) {
+    width: 3rem;
+    height: 3rem;
+    top: -7.5rem;
+    animation: move 4s alternate-reverse infinite;
+}
+
+.particle:nth-child(5) {
+    width: 2rem;
+    height: 2rem;
+    top: -9rem;
+    left: 1rem;
+    animation: move 2.5s alternate-reverse infinite;
+}
+
+.particle:nth-child(6) {
+    width: 2rem;
+    height: 2rem;
+    top: -6.8rem;
+    left: -1.5rem;
+    animation: move 5s alternate-reverse infinite;
+}
+
+.particle:nth-child(7) {
+    width: 1rem;
+    height: 1rem;
+    top: -10rem;
+    left: -1rem;
+    animation: move 1.2s alternate-reverse infinite;
+}
+
+.particle:nth-child(8) {
+    width: 1.3rem;
+    height: 1.3rem;
+    top: -7.5rem;
+    left: -2rem;
+    animation: move 2.5s alternate-reverse infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(4px, 6px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes blink {
+    20% {
+        transform: translate(0, 0);
+        height: 2rem;
+    }
+
+    30% {
+        height: 0;
+    }
+
+    40% {
+        transform: translate(5px, 10px);
+        height: 0;
+    }
+
+    50% {
+        height: 2rem;
+    }
+
+    70% {
+        transform: translate(-10px, -10px);
+    }
+
+    90% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* ESTILOS */
+
+.quitar-guion {
+    text-decoration: none !important;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    color: rgb(252, 252, 252);
+}
+
+.barra {
+    height: 10ch;
+    background: rgb(0, 3, 44);
+}
+
+.foto-perfil-mini {
+    width: 45px;
+}
+
+.mini-perfil {
+    background: rgb(0, 3, 44);
+    border: 0 !important;
+}
+
+.cabesera-mini-perfil {
+    width: 18cap;
+}
+
+.perfilHeader {
+    translate: 0 15%;
+
+}
+
+.accordion {
+    --bs-accordion-active-bg: none;
+    --bs-accordion-btn-bg: none;
+    --bs-accordion-btn-icon: none;
+    --bs-accordion-btn-active-icon: none;
+    --bs-accordion-border-color: none;
+}
+
+/*Botones de barra lateral*/
+
+.lateral {
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 9px;
+    background: radial-gradient(rgba(143, 157, 130, 0.596), rgb(46 64 102), rgba(16, 16, 118, 0.815));
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.lateral:hover {
+    box-shadow: 7px 5px 56px -14px #9765f3;
+    background: transparent;
+}
+
+.lateral:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #9765f3;
+}
+
+/*input de tarjeta*/
+/* From Uiverse.io by vinodjangid07 */
+.InputContainer {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(142 162 255);
+    overflow: hidden;
+    padding: 0px 5px 0px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.322);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.tarjeta {
+    width: auto;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    caret-color: rgb(255, 81, 0);
+    background-color: rgb(142 162 255);
+    font-weight: 600;
+    color: black;
+}
+
+.visaCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+    height: 25px;
+    background-color: rgb(142 162 255);
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.068);
+    border-radius: 7px;
+}
+
+/*Boton de pago*/
+
+/* From Uiverse.io by vinodjangid07 */
+.btn-pagar {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border: none;
+    color: white;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.svgIcon {
+    width: 16px;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.btn-pagar::before {
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.btn-pagar:hover::before {
+    transition-duration: .5s;
+    transform: translate(100%, -50%);
+    border-radius: 0;
+}
+
+.btn-pagar:active {
+    transform: translate(0px, 3px);
+    transition-duration: .5s;
+}
+
+.btn-mostrar-opciones {
+    background: rgb(0, 3, 44);
+}
+
+.fondo {
+    height: 44em;
+    background: radial-gradient(rgb(13, 12, 31), rgb(2, 22, 53)),
+        url("../Imagenes/fondo-compras.webp");
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-position: center;
+    margin-right: 0.5px;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+.juego {
+    background: radial-gradient(ellipse 80vh 90px, rgb(65, 76, 179), rgb(38, 7, 95));
+}
+
+.mensaje-alerta{
+    color: rgb(217, 255, 0);
+    font-size: small;
+}
+
+/* IDS */
+
+#seccion-juegos {
+    border-right: white 1px solid;
+}
+
+#seccion-compra {
+    height: 45cap;
+}
+
+#cabesera {
+    position: fixed;
+    width: 101vw;
+    z-index: 10;
+}
+
+#logo {
+    transition: background ease .5s;
+}
+
+#formulario {
+    transform: translate(20%, 120px);
+    width: 70vw;
+    background: linear-gradient(rgb(16, 81, 134), rgb(47, 15, 73));
+}
+
+#alerta-sin-juegos {
+    color: rgb(217, 255, 0);
+    font-size: xx-large;
+    height: 17cap;
+    align-content: center;
+}
+
+#contenedor-juegos-seleccionados {
+    height: 36cap;
+    background: rgb(142 162 255);
+    overflow-y: auto;
+    scrollbar-width: none;
+    display: none;
+}
+
+/*Etiquetas*/
+input {
+    background-color: rgb(142 162 255);
+    border: none;
+    outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+@media (min-width: 922px) and (max-width: 1200px) {
+    .barra {
+        width: 60% !important;
+    }
+}
+
+@media (max-width: 921px) {
+    #cabesera {
+        width: 102vw;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+    .fondo {
+        height: 78em;
+    }
+    #alerta-sin-juegos {
+        color: rgb(217, 255, 0);
+        font-size: x-large;
+    }
+
+    #formulario {
+        transform: translate(20%, 180px);
+    }
+
+    #logo {
+        background: rgb(0, 3, 44);
+        text-align: center;
+        height: 8ch;
+    }
+
+    .accordion-button {
+        margin-top: -.3em;
+    }
+
+    .barra {
+        justify-content: center !important;
+        height: 8ch;
+    }
+
+    .logo {
+        width: 100%;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    #logo {
+        height: 80%;
+    }
+
+    #barra-lateral {
+        position: fixed;
+        text-align: center;
+        z-index: 20;
+        background: rgb(0, 3, 44);
+        height: 100vh;
+        left: 100%;
+        top: 0;
+        transition: all 0.5s;
+    }
+
+    #accordion-perfil {
+        width: 100%;
+        margin-top: -.5em;
+        margin-bottom: 1em;
+    }
+
+    .accordion-body {
+        background: radial-gradient(rgba(143, 157, 130, 0.596), rgb(46 64 102), rgba(16, 16, 118, 0.815));
+        margin-top: .5em;
+    }
+
+    .accordion-button {
+        padding-left: 33px;
+        padding-right: 33px;
+        padding-bottom: 16px;
+        padding-top: 16px;
+        border-radius: 9px;
+        background: radial-gradient(rgb(143, 157, 130), rgb(46 64 102), rgb(16, 16, 118));
+        border: none;
+        font-family: inherit;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+    .accordion-button:hover {
+        box-shadow: 7px 5px 56px -14px #9765f3;
+        background: transparent;
+    }
+
+    .accordion-button:active {
+        transform: scale(0.97);
+        box-shadow: 7px 5px 56px -10px #9765f3;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo {
+        width: 30px;
+        height: 30px;
+        color: rgb(252, 252, 252);
+    }
+
+    #cabesera {
+        width: 104vw;
+    }
+}
