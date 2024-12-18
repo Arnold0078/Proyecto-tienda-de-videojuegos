@@ -31,6 +31,10 @@
 
 }
 
+.btn-mostrar-opciones {
+    background: rgb(0, 3, 44);
+  }
+
 .accordion {
     --bs-accordion-active-bg: none;
     --bs-accordion-btn-bg: none;

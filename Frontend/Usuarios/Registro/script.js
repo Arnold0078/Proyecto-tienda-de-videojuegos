@@ -20,7 +20,6 @@ const mitades = document.getElementsByClassName("mitades");
 const botonEnvio = document.getElementById("boton");
 
 var verificarCampos = [false, false, false, false];
-var activa = false;
 
 //buscar usuario y adaptar dependiendo el alto de la pantalla
 document.addEventListener("DOMContentLoaded", () => {
@@ -202,15 +201,3 @@ botonEnvio.addEventListener("click", ()=>{
         }
     })
 })
-
-document.getElementById("btn-libreria").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
-});
-
-document.getElementById("btn-comunidad").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
-});
-
-document.getElementById("btn-carrito").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
-});

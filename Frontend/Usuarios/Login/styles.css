@@ -24,7 +24,7 @@ body{
 
 .cuerpo{
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url(../Imagenes/fondo-registro-login.webp);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url("https://tienda-de-juegos.alwaysdata.net/Frontend/Imagenes/fondo-registro-login.webp");
     background-size: cover;
     background-position: center;
 }

@@ -1,8 +1,6 @@
 const correo = document.getElementById("email");
 const contraseña = document.getElementById("contraseña");
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
     //busca si ya hay una sesion activa
@@ -49,16 +47,4 @@ document.getElementById("boton").addEventListener("click", ()=>{
     else
     alert("Por favor rellene todos los espacios");
 
-});
-
-document.getElementById("btn-libreria").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
-});
-
-document.getElementById("btn-comunidad").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
-});
-
-document.getElementById("btn-carrito").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
 });

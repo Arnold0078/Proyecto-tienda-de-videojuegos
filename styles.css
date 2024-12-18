@@ -223,21 +223,6 @@ body {
   margin-right: 0.5px;
 }
 
-.quitar-guion {
-  text-decoration: none !important;
-}
-
-.logo {
-  width: 70px;
-  height: 70px;
-  color: rgb(252, 252, 252);
-}
-
-.barra {
-  height: 10ch;
-  background: rgb(0, 3, 44);
-}
-
 .botones-carousel {
   position: static !important;
   width: auto !important;
@@ -251,58 +236,6 @@ body {
 .card {
   width: 20cap;
   transition: width ease 0.5s;
-}
-
-.foto-perfil-mini {
-  width: 45px;
-}
-
-.mini-perfil {
-  background: rgb(0, 3, 44);
-  border: 0 !important;
-}
-
-.cabesera-mini-perfil {
-  width: 18cap;
-}
-
-.perfilHeader {
-  translate: 0 15%;
-
-}
-
-.accordion {
-  --bs-accordion-active-bg: none;
-  --bs-accordion-btn-bg: none;
-  --bs-accordion-btn-icon: none;
-  --bs-accordion-btn-active-icon: none;
-  --bs-accordion-border-color: none;
-}
-
-/*Botones de barra lateral*/
-
-.lateral {
-  padding-left: 33px;
-  padding-right: 33px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  border-radius: 9px;
-  background: radial-gradient(rgba(143, 157, 130, 0.596), rgb(46 64 102), rgba(16, 16, 118, 0.815));
-  border: none;
-  font-family: inherit;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.lateral:hover {
-  box-shadow: 7px 5px 56px -14px #9765f3;
-  background: transparent;
-}
-
-.lateral:active {
-  transform: scale(0.97);
-  box-shadow: 7px 5px 56px -10px #9765f3;
 }
 
 
@@ -447,10 +380,6 @@ body {
   background: rgb(0, 3, 44);
 }
 
-.btn-mostrar-opciones {
-  background: rgb(0, 3, 44);
-}
-
 /*Swith*/
 /* Minecraft switch made by: csozi | Website: english.csozi.hu*/
 /* The switch - the box around the slider */
@@ -530,19 +459,9 @@ body {
   display: none;
 }
 
-#cabesera {
-  position: fixed;
-  width: 101vw;
-  z-index: 10;
-}
-
 #cuerpo {
   margin-right: 0.5px;
   background: linear-gradient(to bottom right, rgba(0, 3, 44, 0.82), rgba(0, 3, 44, 0.9), rgb(0, 3, 44));
-}
-
-#logo {
-  transition: background ease .5s;
 }
 
 #nuevos-juegos-movil .card {
@@ -566,9 +485,6 @@ body {
 }
 
 @media (min-width: 922px) and (max-width: 1200px) {
-  .barra {
-    width: 60% !important;
-  }
 
   #filtros-busqueda {
     width: 30% !important;
@@ -608,93 +524,4 @@ body {
     display: flex;
   }
 
-  #cabesera {
-    width: 102vw;
-  }
-
-}
-
-@media (min-width: 0px) and (max-width: 991px) {
-  #logo {
-    background: rgb(0, 3, 44);
-    text-align: center;
-    height: 8ch;
-  }
-
-  .accordion-button {
-    margin-top: -.3em;
-  }
-
-  .barra {
-    justify-content: center !important;
-    height: 8ch;
-  }
-
-  .logo {
-    width: 100%;
-  }
-}
-
-@media (min-width: 0px) and (max-width: 767px) {
-  #logo {
-    height: 80%;
-  }
-
-  #barra-lateral {
-    position: fixed;
-    text-align: center;
-    z-index: 20;
-    background: rgb(0, 3, 44);
-    height: 100vh;
-    left: 100%;
-    top: 0;
-    transition: all 0.5s;
-  }
-
-  #accordion-perfil {
-    width: 100%;
-    margin-top: -.5em;
-    margin-bottom: 1em;
-  }
-
-  .accordion-body {
-    background: radial-gradient(rgba(143, 157, 130, 0.596), rgb(46 64 102), rgba(16, 16, 118, 0.815));
-    margin-top: .5em;
-  }
-
-  .accordion-button {
-    padding-left: 33px;
-    padding-right: 33px;
-    padding-bottom: 16px;
-    padding-top: 16px;
-    border-radius: 9px;
-    background: radial-gradient(rgb(143, 157, 130), rgb(46 64 102), rgb(16, 16, 118));
-    border: none;
-    font-family: inherit;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.4s;
-  }
-
-  .accordion-button:hover {
-    box-shadow: 7px 5px 56px -14px #9765f3;
-    background: transparent;
-  }
-
-  .accordion-button:active {
-    transform: scale(0.97);
-    box-shadow: 7px 5px 56px -10px #9765f3;
-  }
-}
-
-@media (max-width: 575px) {
-  .logo {
-    width: 30px;
-    height: 30px;
-    color: rgb(252, 252, 252);
-  }
-
-  #cabesera {
-    width: 104vw;
-  }
 }
