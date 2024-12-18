@@ -488,15 +488,15 @@ function cerrarSesion() {
 }
 
 document.getElementById("btn-libreria").addEventListener("click", () => {
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/";
 });
 
 document.getElementById("btn-comunidad").addEventListener("click", () => {
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/";
 });
 
 document.getElementById("btn-carrito").addEventListener("click", () => {
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Carrito/carrito.html";
+    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Carrito/carrito.html";
 });
 
 //botones para mostrar o ocultar la barra lateral

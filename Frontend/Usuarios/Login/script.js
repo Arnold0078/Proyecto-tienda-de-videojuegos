@@ -52,13 +52,13 @@ document.getElementById("boton").addEventListener("click", ()=>{
 });
 
 document.getElementById("btn-libreria").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
 });
 
 document.getElementById("btn-comunidad").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
 });
 
 document.getElementById("btn-carrito").addEventListener("click", ()=>{
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+    window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
 });

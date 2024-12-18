@@ -113,7 +113,7 @@ window.onscroll = function() {
     
 };
 
-//añade las categorias
+//* añade las categorias
 function categorias(data){
     data.forEach((categoria, index) => {
         const contenedor = document.getElementById("filtrar-categorias");
@@ -141,7 +141,7 @@ function categorias(data){
     });
 }
 
-//genera el miniPerfil
+//* genera el miniPerfil
 function usuario(data){
     activa = true;
     const barra = document.getElementsByClassName("barra");
@@ -198,18 +198,19 @@ function usuario(data){
     //añadir eventos
     botonCerrarSesion.addEventListener("click", cerrarSesion);
     botonMirarPerfil.addEventListener("click", ()=>{
-        window.location.href = "https://example.com/perfil";
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/";
     });
     botonEditarPerfil.addEventListener("click", ()=>{
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Administacion";
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/";
     });
 
-    if(data.usuario.rol != "cliente"){
+    //* verifica si es un admin para colocarle sus respectivas herramientas
+    if(data.rol != "cliente"){
         const botonAdministrar = document.createElement("button");
         botonAdministrar.classList.add("w-100", "btn", "text-white");
         botonAdministrar.textContent = "administracion"
         botonAdministrar.addEventListener("click", ()=>{
-            window.location.href = "https";
+            window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Administracion/principal.html";
         });
         opcionesBody.appendChild(botonAdministrar);
     }
@@ -229,7 +230,7 @@ function usuario(data){
     barraLateral.appendChild(perfil.cloneNode(true));
 }
 
-//añadir juegos
+//* añadir juegos
 function juegos(contenedor, arreglo) {
     const contenedorPrincipal = document.getElementById(contenedor).getElementsByClassName("carousel-inner")[0];
     const contenedorMovil = document.getElementById(contenedor+"-movil").getElementsByClassName("carousel-inner")[0];
@@ -267,7 +268,7 @@ function juegos(contenedor, arreglo) {
     });
 }
 
-//items de carrousel
+//* items de carrousel
 function itemPrincipal(verificador){
     var item = document.createElement("div");
     item.classList.add("carousel-item");
@@ -279,7 +280,7 @@ function itemPrincipal(verificador){
     return item;
 }
 
-//cards 
+//* cards 
 function cardPrincipal(juego){
     var card = document.createElement("div");
     var img = document.createElement("img");
@@ -316,7 +317,7 @@ function cardPrincipal(juego){
     return card;
 }
 
-//cardsgroups
+//* cardsgroups
 function cardGroupPrincipal(){
     var cardGroup = document.createElement("div");
     cardGroup.classList.add("card-group");
@@ -366,14 +367,14 @@ function cerrarSesion() {
 
 document.getElementById("btn-libreria").addEventListener("click", ()=>{
     if(!activa)
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
     else
         window.location.href = "";
 });
 
 document.getElementById("btn-comunidad").addEventListener("click", ()=>{
     if(!activa)
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
     else
         window.location.href = "";
 });
@@ -382,12 +383,12 @@ document.getElementById("btn-carrito").addEventListener("click", ()=>{
     console.log(activa);
     
     if(!activa)
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
     else
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Carrito/carrito.html";
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Carrito/carrito.html";
 });
 
-//ocultar o mostrar filtros y busqueda
+//*¨ocultar o mostrar filtros y busqueda
 document.getElementById("mostrar-filtros").addEventListener("click", ()=>{
     document.body.style.overflow = "hidden";
     document.getElementById("filtros-busqueda").style.right = "0%";
