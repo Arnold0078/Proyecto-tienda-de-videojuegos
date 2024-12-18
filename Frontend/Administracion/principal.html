@@ -6,10 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Administrativo</title>
     <link rel="stylesheet" href="https://tienda-de-juegos.alwaysdata.net/Frontend/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://tienda-de-juegos.alwaysdata.net/Frontend/CSS/estilos-barra.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div id="carga" class="loader">
+        <div class="head"></div>
+
+        <div class="flames">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="eye"></div>
+    </div>
+
     <div id="cabesera" class="row">
         <div class="col-lg col-md-12 col-9 d-lg-block d-flex justify-content-center" id="logo">
             <a href="https://tienda-de-juegos.alwaysdata.net/" class="quitar-guion">
@@ -100,9 +118,6 @@
         </div>
     </div>
     
-
-
-
     <!-- Main Content -->
     <div class="formulario">
         <h1 class="text-center mb-4">Panel Administrativo</h1>
@@ -127,6 +142,7 @@
 
 
     <script src="https://tienda-de-juegos.alwaysdata.net/Frontend/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://tienda-de-juegos.alwaysdata.net/Frontend/JS/logica-barra.js"></script>
     <script src="script.js"></script>
 </body>
 
