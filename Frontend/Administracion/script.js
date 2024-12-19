@@ -9,31 +9,28 @@ document.addEventListener("DOMContentLoaded", () => {
     carga[0].style.display = "flex";
     document.body.style.overflow = "hidden";
 
-    Promise.all([
-        //verifica si el usuario tiene permisos de admin
-        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_sesion.php")
+    //verifica si el usuario tiene permisos de admin
+    fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_sesion.php")
         .then(response => {
-            if(response.status === 200){
-                return response.text(); 
-            }else if (response.status === 403) {
-                throw new Error("403 - Acceso denegado. No tienes permiso para ver esta página.");
+            if (response.status === 200) {
+                return response.text();
+            } else if (response.status === 403) {
+                window.location.href ="https://tienda-de-juegos.alwaysdata.net/";
+                return;
             }
         })
         .then(data => {
             if (data.usuario != null) {
                 usuario(data.usuario);
                 activa = true;
-            }else{
-                alert("acceso denegado");
-                window.location.href = "https://tienda-de-juegos.alwaysdata.net/";
             }
         })
-    ])
-    .catch(error => console.error('Error:', error))
-    .finally(() => {
-        carga[0].style.display = "none";
-        document.body.style.overflow = "auto";
-    });
+        .catch(error => console.error('Error:', error))
+        .finally(() => {
+            carga[0].style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+
 });
 
 function asignarEventoBoton(boton, url) {
@@ -46,18 +43,6 @@ function asignarEventoBoton(boton, url) {
     }
 }
 
-// Asignación de eventos a los botones
-const insertarJuego = document.getElementById("insertvdj");
-asignarEventoBoton(insertarJuego, "formularios/forminsert/finsert.html");
-
-const buscarJuego = document.getElementById("buscarvdj");
-asignarEventoBoton(buscarJuego, "formularios/formbuscar/fbuscar.html");
-
-const modificarJuego = document.getElementById("modvdj");
-asignarEventoBoton(modificarJuego, "formularios/formupdate/fmodificar.html");
-
-const borrarJuego = document.getElementById("borrarbdj");
-asignarEventoBoton(borrarJuego, "formularios/formdelete/fdelete.html");
 
 
 
