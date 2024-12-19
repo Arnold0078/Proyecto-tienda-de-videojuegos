@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Promise.all([
         //verifica si el usuario inicio session
-        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_acceso.php")
-        .then(response => response.json())
+        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_sesion.php")
+        .then(response => {
+            if (response.status === 403) {
+                throw new Error("403 - Acceso denegado. No tienes permiso para ver esta página.");
+            }
+        })
         .then(data => {
             if (data.usuario != null) {
                 usuario(data.usuario);
