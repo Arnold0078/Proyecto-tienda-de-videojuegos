@@ -1,4 +1,3 @@
-
 const generoJuego = document.getElementById('generoJuego');
 var listaCategorias = [];
 
@@ -13,7 +12,7 @@ document.querySelector('.botonJuego').addEventListener('click', function (e) {
     const precioJuego = document.getElementById('precioJuego').value;
     const imagenJuego = document.getElementById('imagenJuego').files[0];
 
-console.log(imagenJuego);
+    console.log(imagenJuego);
     if (imagenJuego) {
         const reader = new FileReader();
 
@@ -65,8 +64,6 @@ console.log(imagenJuego);
 
 });
 
-
-
 ///Pantalla de carga
 const carga = document.getElementsByClassName("loader");
 if ('scrollRestoration' in history) {
@@ -107,71 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     ])
-        .catch(error => console.error('Error:', error))
-        .finally(() => {
-            carga[0].style.display = "none";
-            document.body.style.overflow = "auto";
-        });
-});
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 991)
-        logo.style.background = "rgb(0, 3, 44)";
-    else if (window.scrollY === 0)
-        logo.style.background = "none";
-
-    if (window.innerWidth >= 767) {
+    .catch(error => console.error('Error:', error))
+    .finally(() => {
+        carga[0].style.display = "none";
         document.body.style.overflow = "auto";
-        document.getElementById("barra-lateral").style.left = "100%"
-    }
-
-    if (window.innerHeight <= 637 && window.innerWidth <= 767) {
-        document.getElementById("barra-lateral").style.overflowY = "scroll";
-    } else {
-        document.getElementById("barra-lateral").style.overflowY = "hidden";
-    }
-});
-
-window.onscroll = function () {
-    if (window.scrollY != 0 && window.innerWidth > 991)
-        logo.style.background = "rgb(0, 3, 44)";
-    else if (window.innerWidth > 991)
-        logo.style.background = "none";
-
-};
-
-function cerrarSesion() {
-    fetch("https://tienda-de-juegos.alwaysdata.net/Backend/cerrar_sesion.php");
-    window.location.href = "https://tienda-de-juegos.alwaysdata.net/";
-}
-
-document.getElementById("btn-libreria").addEventListener("click", () => {
-    if (!activa)
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
-    else
-        window.location.href = "";
-});
-
-document.getElementById("btn-comunidad").addEventListener("click", () => {
-    if (!activa)
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
-    else
-        window.location.href = "";
-});
-
-document.getElementById("btn-carrito").addEventListener("click", () => {
-    if (!activa)
-        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Login/login.html";
-    else
-        window.location.href = "";
-});
-
-document.getElementById("mostrar-barra-principal").addEventListener("click", () => {
-    document.body.style.overflow = "hidden";
-    document.getElementById("barra-lateral").style.left = "0%"
-});
-
-document.getElementById("cerrar-barra").addEventListener("click", () => {
-    document.body.style.overflow = "auto";
-    document.getElementById("barra-lateral").style.left = "100%"
+    });
 });

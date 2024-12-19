@@ -27,18 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-window.addEventListener('resize', () => {
-    if(window.innerWidth >= 767){
-        document.getElementById("filtros-busqueda").style.right = "100%";
-    }
-
-    if(window.innerHeight <= 637 && window.innerWidth <= 767){
-        document.getElementById("filtros-busqueda").style.overflowY = "scroll";
-    }else{
-        document.getElementById("filtros-busqueda").style.overflowY = "hidden";
-    }
-});
-
 function asignarEventoBoton(boton, url) {
     if (boton) {
         boton.addEventListener("click", function () {

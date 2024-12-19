@@ -18,12 +18,20 @@ const correo = document.getElementById("correo");
 const contraseña = document.getElementById("contraseña");
 const mitades = document.getElementsByClassName("mitades");
 const botonEnvio = document.getElementById("boton");
+const carga = document.getElementsByClassName("loader");
 
 var verificarCampos = [false, false, false, false];
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual'; // Desactiva la restauración automática del scroll
+}
+
 //buscar usuario y adaptar dependiendo el alto de la pantalla
 document.addEventListener("DOMContentLoaded", () => {
-    
+    window.scrollTo(0, 0);
+    carga[0].style.display = "flex";
+    document.body.style.overflow = "hidden";
+
     fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_sesion.php")
     .then(response => response.json())
     .then(data => {
@@ -34,7 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
             mitades[1].classList.add("col");
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error))
+    .finally(() => {
+        carga[0].style.display = "none";
+        document.body.style.overflow = "auto";
+    });
+    
 });
 
 window.addEventListener('orientationchange', function() {
