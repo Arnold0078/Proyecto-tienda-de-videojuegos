@@ -8,6 +8,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == "admin") {
     echo json_encode(['usuario' => $usuario]);
 } else {
     http_response_code(403);
+    echo json_encode(['usuario' => 'null']);
 }
 
 ?>
