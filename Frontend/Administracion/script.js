@@ -10,25 +10,29 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
 
     //verifica si el usuario tiene permisos de admin
-    fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_sesion.php")
+    fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_acceso.php")
         .then(response => {
             if (response.status === 200) {
                 return response.text();
             } else if (response.status === 403) {
-                window.location.href ="https://tienda-de-juegos.alwaysdata.net/";
-                return;
+                throw new Error("Acceso denegado.");
             }
         })
         .then(data => {
-            if (data.usuario != null) {
-                usuario(data.usuario);
-                activa = true;
-            }
+            usuario(data.usuario);
+            activa = true;
         })
-        .catch(error => console.error('Error:', error))
+        .catch(error => {
+            isErrorOccurred = true;
+            console.error('Error:', error);
+        })
         .finally(() => {
-            carga[0].style.display = "none";
-            document.body.style.overflow = "auto";
+            if (!isErrorOccurred) {
+                carga[0].style.display = "none";
+                document.body.style.overflow = "auto";
+            } else {
+                window.location.href ="https://tienda-de-juegos.alwaysdata.net/";
+            }
         });
 
 });
