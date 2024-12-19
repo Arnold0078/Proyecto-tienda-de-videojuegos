@@ -159,6 +159,29 @@ document.getElementById("btn-carrito").addEventListener("click", ()=>{
         window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Carrito/carrito.html";
 });
 
+document.getElementById("btn-libreria-movil").addEventListener("click", ()=>{
+    if(!activa)
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
+    else
+        window.location.href = "";
+});
+
+document.getElementById("btn-comunidad-movil").addEventListener("click", ()=>{
+    if(!activa)
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
+    else
+        window.location.href = "";
+});
+
+document.getElementById("btn-carrito-movil").addEventListener("click", ()=>{
+    console.log(activa);
+    
+    if(!activa)
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Login/login.html";
+    else
+        window.location.href = "https://tienda-de-juegos.alwaysdata.net/Frontend/Usuarios/Carrito/carrito.html";
+});
+
 //* oculta o muestra la barra lateral
 document.getElementById("mostrar-barra-principal").addEventListener("click", ()=>{
     document.body.style.overflow = "hidden";
