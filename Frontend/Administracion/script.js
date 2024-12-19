@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Promise.all([
         //verifica si el usuario inicio session
-        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_sesion.php")
+        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_acceso.php")
         .then(response => response.json())
         .then(data => {
             if (data.usuario != null) {
