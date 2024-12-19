@@ -2,7 +2,7 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(../../../Imagenes/imageInsertar.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("https://tienda-de-juegos.alwaysdata.net/Frontend/Imagenes/fondo-registro-modificacion-juegos.webp");
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
