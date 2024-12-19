@@ -10,10 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
 
     Promise.all([
-        //verifica si el usuario inicio session
+        //verifica si el usuario tiene permisos de admin
         fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_sesion.php")
         .then(response => {
-            if (response.status === 403) {
+            if(response.status === 200){
+                return response.text(); 
+            }else if (response.status === 403) {
                 throw new Error("403 - Acceso denegado. No tienes permiso para ver esta página.");
             }
         })
@@ -21,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (data.usuario != null) {
                 usuario(data.usuario);
                 activa = true;
+            }else{
+                alert("acceso denegado");
+                window.location.href = "https://tienda-de-juegos.alwaysdata.net/";
             }
         })
     ])
