@@ -123,16 +123,31 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
     carga[0].style.display = "flex";
     document.body.style.overflow = "hidden";
+    var isErrorOccurred = false;
 
-    if (window.innerHeight <= 637 && window.innerWidth <= 767) {
-        document.getElementById("barra-lateral").style.overflowY = "scroll";
-    } else {
-        document.getElementById("barra-lateral").style.overflowY = "hidden";
-        document.getElementById("barra-lateral").style.overflowX = "hidden";
-    }
-
-    setTimeout(function () {
-        carga[0].style.display = "none";
-        document.body.style.overflow = "auto";
-    }, 2000);
+    //* verifica si el usuario tiene permisos de admin
+    fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_acceso.php")
+        .then(response => {
+            if (response.status === 200) {
+                return response.json();
+            } else if (response.status === 403) {
+                throw new Error("Acceso denegado.");
+            }
+        })
+        .then(data => {
+            usuario(data.usuario);
+            activa = true;
+        })
+        .catch(error => {
+            isErrorOccurred = true;
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            if (!isErrorOccurred) {
+                carga[0].style.display = "none";
+                document.body.style.overflow = "auto";
+            } else {
+                window.location.href = "https://tienda-de-juegos.alwaysdata.net/";
+            }
+        });
 });

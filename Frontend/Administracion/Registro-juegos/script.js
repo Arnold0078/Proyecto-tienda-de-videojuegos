@@ -1,6 +1,66 @@
 const generoJuego = document.getElementById('generoJuego');
 var listaCategorias = [];
 
+///Pantalla de carga
+const carga = document.getElementsByClassName("loader");
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual'; // Desactiva la restauración automática del scroll
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    window.scrollTo(0, 0);
+    carga[0].style.display = "flex";
+    document.body.style.overflow = "hidden";
+    var isErrorOccurred = false;
+
+    Promise.all([
+
+        //busca todas las categorias
+        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Base-de-datos/Categorias/buscar.php", {
+            method: "POST",
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.categorias != undefined) {
+                    data.categorias.forEach(categoria => {
+                        const option = document.createElement("option");
+                        option.setAttribute('value', categoria.id_categoria);
+                        option.textContent = categoria.nombre;
+                        generoJuego.appendChild(option);
+                        listaCategorias.push(categoria);
+                        console.log(categoria);
+                    });
+                }
+            }),
+
+            //* verifica si el usuario tiene permisos de admin
+        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_acceso.php")
+            .then(response => {
+                if (response.status === 200) {
+                    return response.json();
+                } else if (response.status === 403) {
+                    throw new Error("Acceso denegado.");
+                }
+            })
+            .then(data => {
+                usuario(data.usuario);
+                activa = true;
+            })
+    ])
+    .catch(error => {
+        isErrorOccurred = true;
+        console.error('Error:', error);
+    })
+    .finally(() => {
+        if (!isErrorOccurred) {
+            carga[0].style.display = "none";
+            document.body.style.overflow = "auto";
+        } else {
+            window.location.href = "https://tienda-de-juegos.alwaysdata.net/";
+        }
+    });
+});
+
 // Función para manejar el envío del formulario
 
 document.querySelector('.botonJuego').addEventListener('click', function (e) {
@@ -62,51 +122,4 @@ document.querySelector('.botonJuego').addEventListener('click', function (e) {
         reader.readAsDataURL(imagenJuego); // Lee la imagen como base64
     }
 
-});
-
-///Pantalla de carga
-const carga = document.getElementsByClassName("loader");
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual'; // Desactiva la restauración automática del scroll
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    window.scrollTo(0, 0);
-    carga[0].style.display = "flex";
-    document.body.style.overflow = "hidden";
-
-    if (window.innerHeight <= 637 && window.innerWidth <= 767) {
-        document.getElementById("barra-lateral").style.overflowY = "scroll";
-    } else {
-        document.getElementById("barra-lateral").style.overflowY = "hidden";
-        document.getElementById("barra-lateral").style.overflowX = "hidden";
-    }
-
-    Promise.all([
-
-        //busca todas las categorias
-        fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Base-de-datos/Categorias/buscar.php", {
-            method: "POST",
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.categorias != undefined) {
-                    data.categorias.forEach(categoria => {
-                        const option = document.createElement("option");
-                        option.setAttribute('value', categoria.id_categoria);
-                        option.textContent = categoria.nombre;
-                        generoJuego.appendChild(option);
-                        listaCategorias.push(categoria);
-                        console.log(categoria);
-                    });
-                }
-            })
-
-
-    ])
-    .catch(error => console.error('Error:', error))
-    .finally(() => {
-        carga[0].style.display = "none";
-        document.body.style.overflow = "auto";
-    });
 });
