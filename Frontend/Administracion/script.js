@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
     carga[0].style.display = "flex";
     document.body.style.overflow = "hidden";
+    let isErrorOccurred = false;
 
-    //verifica si el usuario tiene permisos de admin
+    //* verifica si el usuario tiene permisos de admin
     fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_acceso.php")
         .then(response => {
             if (response.status === 200) {
@@ -46,8 +47,3 @@ function asignarEventoBoton(boton, url) {
         console.error(`El botón no existe: ${url}`);
     }
 }
-
-
-
-
-
