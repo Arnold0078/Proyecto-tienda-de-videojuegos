@@ -184,7 +184,7 @@ function cardPrincipal(juego){
     precio.classList.add("card-text");
 
     //atributos
-    img.setAttribute('alt', '');
+    img.alt = "";
 
     //contenido
     const imgURL = juego.imagen.replace(/^dataimage\/([a-zA-Z]+)base64\//, 'data:image/$1;base64,/');
