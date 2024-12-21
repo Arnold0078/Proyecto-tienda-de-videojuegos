@@ -183,6 +183,9 @@ function cardPrincipal(juego){
     nombre.classList.add("card-title");
     precio.classList.add("card-text");
 
+    //atributos
+    img.setAttribute('alt', '');
+
     //contenido
     const imgURL = juego.imagen.replace(/^dataimage\/([a-zA-Z]+)base64\//, 'data:image/$1;base64,/');
     img.src = imgURL;
