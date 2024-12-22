@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                 }
             }),
-        /*
         //verifica si el usuario tiene permisos de admin
         fetch("https://tienda-de-juegos.alwaysdata.net/Backend/Session/verificar_acceso.php")
             .then(response => {
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 usuario(data.usuario);
                 activa = true;
-            })*/
+            })
     ])
     .catch(error => {
         isErrorOccurred = true;
