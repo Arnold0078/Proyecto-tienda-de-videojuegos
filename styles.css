@@ -23,9 +23,9 @@ body {
 
 .fondo video {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   min-width: 100%;
   min-height: 100%;
   width: auto;
@@ -293,6 +293,12 @@ body {
 
 #filtros-busqueda .adicionales-filtros {
   display: none;
+}
+
+@media (max-width: 980px) {
+  .fondo video {
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media (min-width: 922px) and (max-width: 1200px) {
