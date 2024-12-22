@@ -10,10 +10,9 @@ function guardarJuego($data){
     $precio = $data['precio'];
     $categorias = $data['categorias'] ? $data['categorias'] : [];
     $imagen = $data['imagen'];
-    echo json_encode(['imagen' => $imagen]);
-
 
     if (empty($nombre) || empty($descripcion)  || empty($precio) || empty($categorias)|| empty($imagen)) {
+        http_response_code(400);
         echo json_encode(['mensaje' => 'Datos incompletos']);
     }else{
         $blob = base64_decode($imagen);
@@ -29,19 +28,20 @@ function guardarJuego($data){
                 añadirCategorias($con ,$categorias , $id_juego);
                 echo json_encode(['mensaje' => 'juego guardado exitosamente']) ;
             } else {
+                http_response_code(409);
                 echo json_encode(['mensaje' => 'El juego a guardar ya existe..']) ;
 
             }
 
         } catch (mysqli_sql_exception $e) {
-            echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde']);
+            http_response_code(500);
+            echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde 1']);
         }
         $con->close();
     }
 }
 
 function añadirCategorias($con , $categorias , $id_juego) {
-
         
     try{
 
@@ -54,11 +54,9 @@ function añadirCategorias($con , $categorias , $id_juego) {
         }
 
     } catch (mysqli_sql_exception $e) {
-        echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde']);
+        http_response_code(500);
+        echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde 2']);
     }
-
-
-
 
 }
 
