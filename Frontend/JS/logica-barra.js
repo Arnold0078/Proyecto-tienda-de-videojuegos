@@ -88,6 +88,7 @@ function usuario(data){
     botonPerfil.setAttribute('aria-controls', 'opciones-perfil');
     opciones.setAttribute('data-bs-parent', '#accordion-perfil');
     foto.setAttribute('src', 'https://tienda-de-juegos.alwaysdata.net/Frontend/Imagenes/default.webp');
+    foto.alt = "miniPerfil";
 
     //Añadir textos
     nickname.textContent = data.nickname;

@@ -189,6 +189,7 @@ function cardPrincipal(juego){
 
     //atributos
     img.alt = "";
+    img.height = "13cap";
 
     //contenido
     const imgURL = juego.imagen.replace(/^dataimage\/webpbase64/, 'data:image/webp;base64,');
