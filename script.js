@@ -129,27 +129,29 @@ function juegos(contenedor, arreglo) {
     var itemMovil;
 
     arreglo.forEach((juego, index) => {
+        cards ++;
+
         if (itemMovil == undefined) {
             itemMovil = itemPrincipal(true);   
         }else{
             itemMovil = itemPrincipal(false);
         }
 
+        if(index === (arreglo.length-1) && cards != 3){
+            cardGroup.appendChild(cardPrincipal(juego));
+            item.appendChild(cardGroup);
+            contenedorPrincipal.appendChild(item);
+        }
+
         if (cards === 3) {
+            cardGroup.appendChild(cardPrincipal(juego));
             item.appendChild(cardGroup);
             contenedorPrincipal.appendChild(item);
             item = itemPrincipal();
             cardGroup = cardGroupPrincipal();
             cards = 0;
-        }else{
-            cards ++;
+        }else if(index != (arreglo.length-1)) {
             cardGroup.appendChild(cardPrincipal(juego));
-        }
-        
-        if(index === (arreglo.length-1)){
-            cardGroup.appendChild(cardPrincipal(juego));
-            item.appendChild(cardGroup);
-            contenedorPrincipal.appendChild(item);
         }
 
         itemMovil.appendChild(cardPrincipal(juego));

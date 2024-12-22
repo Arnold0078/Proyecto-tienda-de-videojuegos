@@ -157,7 +157,7 @@ function conversionWebp(file){
             ctx.drawImage(img, 0, 0);
 
             // Convertir la imagen a WebP
-            const webpImage = canvas.toDataURL('image/webp', 0.8);
+            const webpImage = canvas.toDataURL('image/webp', 0.6);
             resolve(webpImage); // Retorna la imagen WebP como URL de datos
         };
 
