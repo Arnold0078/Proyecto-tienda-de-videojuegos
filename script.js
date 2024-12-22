@@ -134,20 +134,22 @@ function juegos(contenedor, arreglo) {
         }else{
             itemMovil = itemPrincipal(false);
         }
-        
 
         if (cards === 3) {
             item.appendChild(cardGroup);
             contenedorPrincipal.appendChild(item);
             item = itemPrincipal();
             cardGroup = cardGroupPrincipal();
-        }else if(index === arreglo.length - 1){
-            cardGroup.appendChild(cardPrincipal(juego));
-            item.appendChild(cardGroup);
-            contenedorPrincipal.appendChild(item);
+            cards = 0;
         }else{
             cards ++;
             cardGroup.appendChild(cardPrincipal(juego));
+        }
+        
+        if(index === (arreglo.length-1)){
+            cardGroup.appendChild(cardPrincipal(juego));
+            item.appendChild(cardGroup);
+            contenedorPrincipal.appendChild(item);
         }
 
         itemMovil.appendChild(cardPrincipal(juego));
