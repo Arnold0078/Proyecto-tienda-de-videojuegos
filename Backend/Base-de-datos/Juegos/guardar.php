@@ -46,7 +46,6 @@ function añadirCategorias($con , $categorias , $id_juego) {
     try{
 
         foreach ($categorias as $index => $categoria) {
-        echo json_encode(['mensaje' => $categoria['id_categoria']]);
 
         $stmt = $con->prepare("INSERT INTO categorias_juego(juego_id , categoria_id) VALUES(?,?)");
         $stmt->bind_param("ii", $id_juego, $categoria['id_categoria'] );
