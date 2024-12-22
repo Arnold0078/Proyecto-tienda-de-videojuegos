@@ -35,7 +35,7 @@ function guardarJuego($data){
 
         } catch (mysqli_sql_exception $e) {
             http_response_code(500);
-            echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde 1']);
+            echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde']);
         }
         $con->close();
     }
@@ -55,7 +55,7 @@ function añadirCategorias($con , $categorias , $id_juego) {
 
     } catch (mysqli_sql_exception $e) {
         http_response_code(500);
-        echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde 2']);
+        echo json_encode(['mensaje' => 'Error de conexion por favor intentelo mas tarde']);
     }
 
 }
@@ -69,7 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $datos = $data['datos'];
         GuardarJuego($datos);
     }else{
-        echo json_encode(['mensaje' => 'Offset no recibido']);
+        http_response_code(400);
+        echo json_encode(['mensaje' => 'Datos no recibidos']);
     }
 }
 

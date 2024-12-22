@@ -67,8 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("boton").addEventListener('click', async function (e) {
     e.preventDefault();  // Prevenir el comportamiento por defecto del formulario
     const datos = await verificarDatos();
-    console.log(datos);
-    
 
     if (datos != null) {
         // Guarda los datos del juego
@@ -82,13 +80,13 @@ document.getElementById("boton").addEventListener('click', async function (e) {
             })
         })
         .then(response => {
-            if (response === 200) {
+            if (response.status === 200) {
                 return response.json();
-            }else if (response === 400) {
+            }else if (response.status === 400) {
                 throw new Error("Faltaron datos por enviar");
-            }else if(response === 409){
+            }else if(response.status === 409){
                 throw new Error("El juego a guardar ya existe");
-            }else if(response === 500){
+            }else if(response.status === 500){
                 throw new Error("Error de conexion por favor intentelo mas tarde");
             }else{
                 throw new Error("Ocurrio un error inesperado");
@@ -97,7 +95,7 @@ document.getElementById("boton").addEventListener('click', async function (e) {
         .then(data => {
             alert(data.mensaje);
         })
-        .catch(error => alert('Error:', error));
+        .catch(error => alert(error));
     }
 
 });
@@ -122,14 +120,13 @@ async function verificarDatos(){
             const imagen = await conversionWebp(imagenJuego);
 
             const formData = {
-                nombre: nombreJuego,
-                descripcion: descripcionJuego,
-                precio: precioJuego,
-                categorias: categorias,
-                imagen: imagen
+                nombre:nombreJuego,
+                descripcion:descripcionJuego,
+                precio:precioJuego,
+                categorias:categorias,
+                imagen:imagen
             };
 
-            console.log(formData);
             return formData; // Aquí se retorna el objeto con los datos completos
 
         } catch (error) {
