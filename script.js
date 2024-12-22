@@ -187,7 +187,7 @@ function cardPrincipal(juego){
     img.alt = "";
 
     //contenido
-    const imgURL = juego.imagen.replace(/^dataimage\/([a-zA-Z]+)base64\//, 'data:image/$1;base64,/');
+    const imgURL = juego.imagen.replace(/^dataimage\/webpbase64/, 'data:image/webp;base64,');
     img.src = imgURL;
     nombre.textContent = juego.nombre;
     small.textContent = "precio $" + juego.precio;
